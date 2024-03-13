@@ -27,7 +27,6 @@ public class AlertTest extends SharedData {
         alertPage.dealWithCancelButton();
 
     }
-
     //de facut peste tot cu getWebDriver()
     //de reparat toate testele
 }

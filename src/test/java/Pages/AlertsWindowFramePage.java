@@ -12,10 +12,15 @@ public class AlertsWindowFramePage extends BasePage{
         super(webDriver);
     }
     @FindBy(xpath = "//span[text() ='Alerts']")
-    private WebElement browserFormField;
+    private WebElement alertField;
 
+    @FindBy(xpath = "fc-button-label")
+    private WebElement frameField;
     public void navigateToAlertPage() {
         elementMethods.scrollElementByPyxel(0, 350);
-        elementMethods.clickElement(browserFormField);
+        elementMethods.clickElement(alertField);
+    }
+    public void navigateToFramePage() {
+        elementMethods.clickElement(frameField);
     }
 }

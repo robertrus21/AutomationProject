@@ -2,6 +2,8 @@ package Tests;
 
 import HelperMethods.ElementMethods;
 import HelperMethods.FrameMethods;
+import Pages.AlertsWindowFramePage;
+import Pages.HomePage;
 import SharedData.SharedData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -25,6 +27,12 @@ public class FrameTest extends SharedData {
 
         ElementMethods elementMetods = new ElementMethods(getWebDriver());
         FrameMethods frameMethods = new FrameMethods(getWebDriver());
+        HomePage homePage = new HomePage(getWebDriver());
+
+        AlertsWindowFramePage alertsWindowFramePage = new AlertsWindowFramePage(getWebDriver());
+        alertsWindowFramePage.navigateToFramePage();
+
+
 
 //        JavascriptExecutor js = (JavascriptExecutor) webDriver;
 //        js.executeScript("window.scrollBy(0,350)", "");

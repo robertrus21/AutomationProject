@@ -72,7 +72,6 @@ public class ElementMethods {
 
     public void fillPressElement(WebElement element, String value, Key key) {
         waitVisibleElement(element);
-        element.sendKeys("Economics");
         element.sendKeys(Keys.ENTER);
     }
 

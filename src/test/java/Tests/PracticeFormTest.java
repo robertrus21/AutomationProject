@@ -38,9 +38,9 @@ public class PracticeFormTest extends SharedData{
 
         elementMetods.scrollElementByPyxel(0,350);
 
-        WebElement consentField= getWebDriver().findElement(By.className("fc-button-label"));
-        //consentField.click();
-        elementMetods.clickElement(consentField);
+//        WebElement consentField= getWebDriver().findElement(By.className("fc-button-label"));
+//        //consentField.click();
+//        elementMetods.clickElement(consentField);
 
         WebElement elementsField= getWebDriver().findElement(By.xpath("//h5[text()='Forms']"));
         //elementsField.click();
