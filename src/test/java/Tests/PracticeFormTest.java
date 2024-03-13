@@ -130,8 +130,8 @@ public class PracticeFormTest extends SharedData{
         //WebElement sportUserField= webDriver.findElement(By.cssSelector("label[for='hobbies-checkbox-1']"));
         //sportUserField.click();
 
-        //WebElement dateUserField= webDriver.findElement(By.id("dateOfBirthInput"));
-        //dateUserField.click();
+//        WebElement dateUserField= getWebDriver().findElement(By.id("dateOfBirthInput"));
+//        dateUserField.click();
 
         String subjectValue = "Economics";
         WebElement subjectFields=getWebDriver().findElement(By.id("subjectsInput"));
@@ -199,6 +199,7 @@ public class PracticeFormTest extends SharedData{
         Assert.assertEquals(valueFields.get(3).getText(), telUserlValue);
 
         Assert.assertEquals(labelFields.get(4).getText(), "Date of Birth");
+        //trebuie completata validarea cu data nasterii
 
         Assert.assertEquals(labelFields.get(5).getText(), "Subjects");
         Assert.assertEquals(valueFields.get(5).getText(), subjectValue);
