@@ -9,10 +9,16 @@ public class FramePage extends BasePage{
         super(webDriver);
     }
 
+    @FindBy(id = "sampleHeading")
+    private WebElement thisIs;
 
     public void dealWithIFrame (){
         frameMethods.switchSpecificIFrame("frame1");
-        System.out.println();
+        System.out.println(thisIs.getText());
+//        webDriver.switchTo().parentFrame();
+        frameMethods.switchParentFeame();
+        frameMethods.switchSpecificIFrame("frame2");
+        System.out.println(thisIs.getText());
     }
 
     //tema de rezolvat asta

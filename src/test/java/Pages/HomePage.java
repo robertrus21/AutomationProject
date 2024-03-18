@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage extends BasePage {
 
     public HomePage(WebDriver webDriver) {
+
         super(webDriver);
     }
 
@@ -19,6 +20,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//h5[text()='Alerts, Frame & Windows']")
     private WebElement elementsField;
 
+    @FindBy(xpath = "//h5[text()='Forms']")
+    private WebElement formsField;
+
 
     public void navigateAlertFrameWindowPage(){
         elementMethods.scrollElementByPyxel(0,350);
@@ -26,6 +30,11 @@ public class HomePage extends BasePage {
     //    elementMethods.clickElement(consentField);
     //    WebElement elementsField = getWebDriver().findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
         elementMethods.clickElement(elementsField);
+    }
+
+    public void navigateFormsPage(){
+        elementMethods.scrollElementByPyxel(0,350);
+        elementMethods.clickElement(formsField);
     }
 
 }

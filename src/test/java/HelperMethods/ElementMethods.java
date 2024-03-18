@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.security.Key;
 import java.time.Duration;
 
 public class ElementMethods {
@@ -70,9 +69,23 @@ public class ElementMethods {
         select.selectByValue(value);
     }
 
-    public void fillPressElement(WebElement element, String value, Key key) {
+    public void fillPressElement(WebElement element, String value, Keys key) {
         waitVisibleElement(element);
         element.sendKeys(Keys.ENTER);
+    }
+
+    public void fillPress(WebElement element, String value) {
+        waitVisibleElement(element);
+        element.click();
+        element.sendKeys(value);
+        element.sendKeys(Keys.ENTER);
+    }
+    public void fillState(WebElement element, WebElement element2, String value) {
+        waitVisibleElement(element);
+        element.click();
+        waitVisibleElement(element2);
+        element2.sendKeys(value);
+        element2.sendKeys(Keys.ENTER);
     }
 
     public void clickElemForce(WebElement element) {

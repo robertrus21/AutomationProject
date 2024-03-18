@@ -11,11 +11,12 @@ public class FrameMethods {
     }
 
     public void switchSpecificIFrame (String value) {
+
         webDriver.switchTo().frame(value);
     }
 
-    public void switchParentFeame (String value) {
-        webDriver.switchTo().frame(value);
+    public void switchParentFeame () {
+        webDriver.switchTo().parentFrame();
     }
 
 }
