@@ -23,6 +23,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//h5[text()='Forms']")
     private WebElement formsField;
 
+    @FindBy(xpath = "//h5[text()='Elements']")
+    private WebElement elemField;
+
 
     public void navigateAlertFrameWindowPage(){
         elementMethods.scrollElementByPyxel(0,350);
@@ -35,6 +38,11 @@ public class HomePage extends BasePage {
     public void navigateFormsPage(){
         elementMethods.scrollElementByPyxel(0,350);
         elementMethods.clickElement(formsField);
+    }
+
+    public void navidateWebTablePage (){
+        elementMethods.scrollElementByPyxel(0,350);
+        elementMethods.clickElement(elemField);
     }
 
 }

@@ -45,20 +45,8 @@ public class PracticeFormTest extends SharedData{
         String stateName = "NCR";
         String cityName = "Delhi";
 
-
-        practiceFormPage.fillFirstName(firstNameValue);
-        practiceFormPage.fillLirstName(lastNameValue);
-        practiceFormPage.fillEmail(emailUserlValue);
-        practiceFormPage.fillgender(genderValue);
-        practiceFormPage.fillNumber(telUserlValue);
-        practiceFormPage.fillBirthDate(monthValue, yearValue, dayValue);
-        practiceFormPage.fillSubject(subjectValue);
-        practiceFormPage.fillHobbies(hobbies);
-        practiceFormPage.fillPicture(filePath);
-        practiceFormPage.fillAdress(adresValue);
-        practiceFormPage.fillState(stateName);
-        practiceFormPage.fillCity(cityName);
-        practiceFormPage.submit();
+        practiceFormPage.fillEntireForm(firstNameValue, lastNameValue, emailUserlValue, genderValue, telUserlValue, monthValue, yearValue, dayValue, subjectValue, hobbies,
+                filePath, adresValue, stateName, cityName);
         practiceFormPage.validatePracticeFormTable(firstNameValue, lastNameValue, emailUserlValue, genderValue, telUserlValue, subjectValue, hobbies, filePath, adresValue,
                 stateName, cityName, monthValue, yearValue, dayValue);
 

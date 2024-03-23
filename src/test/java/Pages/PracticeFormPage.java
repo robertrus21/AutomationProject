@@ -177,4 +177,23 @@ public class PracticeFormPage extends BasePage{
 
     }
 
+    public void fillEntireForm (String firstNameValue, String lastNameValue, String emailUserlValue, String genderValue, String telUserlValue, String monthValue, String yearValue,
+                                String dayValue, String subjectValue, List <String> hobbies, String filePath, String adresValue, String stateName, String cityName) {
+
+        fillFirstName(firstNameValue);
+        fillLirstName(lastNameValue);
+        fillEmail(emailUserlValue);
+        fillgender(genderValue);
+        fillNumber(telUserlValue);
+        fillBirthDate(monthValue, yearValue, dayValue);
+        fillSubject(subjectValue);
+        fillHobbies(hobbies);
+        fillPicture(filePath);
+        fillAdress(adresValue);
+        fillState(stateName);
+        fillCity(cityName);
+        submit();
+
+    }
+
 }
