@@ -1,8 +1,10 @@
 package Tests;
 
 import HelperMethods.ElementMethods;
+import ObjectData.WebTableObject;
 import Pages.HomePage;
 import Pages.WebTablesPage;
+import PropertyUtility.PropertyUtility;
 import SharedData.SharedData;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,31 +14,26 @@ import org.testng.annotations.Test;
 public class WebTableTest extends SharedData {
     @Test
     public void metodaTest(){
+
+        PropertyUtility propertyUtility = new PropertyUtility("WebTableData");
+        WebTableObject webTableObject = new WebTableObject(propertyUtility.getAllData());
+
         HomePage homePage = new HomePage(getWebDriver());
         homePage.navidateWebTablePage();
         WebTablesPage webTablesPage = new WebTablesPage(getWebDriver());
 
-        String firstNameValue="First Test";
-        String lastNameValue="last Test";
-        String emailValue="user@email.com";
-        String ageValue="30";
-        String salaryValue="1000";
-        String departmentValue="HR";
-        String firstNameModifyValue = "First Test22";
-        String userAgeModifyValue = "40";
-
         webTablesPage.webTablesField();
         webTablesPage.addField();
-        webTablesPage.firstNameField(firstNameValue);
-        webTablesPage.lastNameField(lastNameValue);
-        webTablesPage.emailField(emailValue);
-        webTablesPage.ageField(ageValue);
-        webTablesPage.salaryField(salaryValue);
-        webTablesPage.departmentField(departmentValue);
+        webTablesPage.firstNameField(webTableObject);
+        webTablesPage.lastNameField(webTableObject);
+        webTablesPage.emailField(webTableObject);
+        webTablesPage.ageField(webTableObject);
+        webTablesPage.salaryField(webTableObject);
+        webTablesPage.departmentField(webTableObject);
         webTablesPage.submitField();
         webTablesPage.editField();
-        webTablesPage.firstNameModifyField(firstNameModifyValue);
-        webTablesPage.userAgeModifyField(userAgeModifyValue);
+        webTablesPage.firstNameModifyField(webTableObject);
+        webTablesPage.userAgeModifyField(webTableObject);
         webTablesPage.submitEdit();
         webTablesPage.deleteEdit();
 

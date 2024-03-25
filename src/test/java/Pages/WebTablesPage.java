@@ -1,5 +1,6 @@
 package Pages;
 
+import ObjectData.WebTableObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -60,28 +61,28 @@ public class WebTablesPage extends BasePage{
         elementMethods.clickElement(addRecord);
     }
 
-    public void firstNameField (String firstNameValue){
-        elementMethods.fillElement(firstName, firstNameValue);
+    public void firstNameField (WebTableObject webTableObject){
+        elementMethods.fillElement(firstName, webTableObject.getFirstNameValue());
     }
 
-    public void lastNameField (String lastNameValue){
-        elementMethods.fillElement(lastName, lastNameValue);
+    public void lastNameField (WebTableObject webTableObject){
+        elementMethods.fillElement(lastName, webTableObject.getLastNameValue());
     }
 
-    public void emailField (String emailValue){
-        elementMethods.fillElement(userEmail, emailValue);
+    public void emailField (WebTableObject webTableObject){
+        elementMethods.fillElement(userEmail, webTableObject.getEmailValue());
     }
 
-    public void ageField (String ageValue){
-        elementMethods.fillElement(age, ageValue);
+    public void ageField (WebTableObject webTableObject){
+        elementMethods.fillElement(age, webTableObject.getAgeValue());
     }
 
-    public void salaryField (String salaryValue){
-        elementMethods.fillElement(salary, salaryValue);
+    public void salaryField (WebTableObject webTableObject){
+        elementMethods.fillElement(salary, webTableObject.getSalaryValue());
     }
 
-    public void departmentField (String departmentValue){
-        elementMethods.fillElement(department, departmentValue);
+    public void departmentField (WebTableObject webTableObject){
+        elementMethods.fillElement(department, webTableObject.getDepartmentValue());
     }
 
     public void submitField (){
@@ -92,12 +93,12 @@ public class WebTablesPage extends BasePage{
         elementMethods.clickElement(editRecord);
     }
 
-    public void firstNameModifyField (String firstNameModifyValue){
-        elementMethods.fillElement(editFirstName, firstNameModifyValue);
+    public void firstNameModifyField (WebTableObject webTableObject){
+        elementMethods.fillElement(editFirstName, webTableObject.getFirstNameModifyValue());
     }
 
-    public void userAgeModifyField (String userAgeModifyField){
-        elementMethods.fillElement(editAge, userAgeModifyField);
+    public void userAgeModifyField (WebTableObject webTableObject){
+        elementMethods.fillElement(editAge, webTableObject.getUserAgeModifyValue());
     }
 
     public void submitEdit(){
