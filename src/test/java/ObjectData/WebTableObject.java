@@ -15,6 +15,7 @@ public class WebTableObject {
     //facem o metoda care sa mapeze datele dn fisierul de resursa cu reprezentarea acestui obiect
 
     public WebTableObject (Map<String, String> testData){
+
         prepareObject(testData);
     }
     private void prepareObject (Map<String, String> testData){

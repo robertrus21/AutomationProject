@@ -1,5 +1,6 @@
 package Pages;
 
+import ObjectData.PracticeFormObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -130,68 +131,65 @@ public class PracticeFormPage extends BasePage{
         elementMethods.clickElement(submit);
     }
 
-    public void validatePracticeFormTable (String firstNameValue, String lastNameValue, String emailUserlValue, String genderValue, String telUserlValue, String subjectValue,
-                                           List<String> hobbies, String filePath, String adresValue, String stateName, String cityName, String monthValue, String yearValue,
-                                           String dayValue){
+    public void validatePracticeFormTable (PracticeFormObject practiceFormObject){
 
         //validam tabelul cu valori
 
         //ii amintesc la Alex dupa ce facem obiecte si constructori!
 
         Assert.assertEquals(labelFields.get(0).getText(), "Student Name");
-        Assert.assertEquals(valueFields.get(0).getText(), firstNameValue + " " + lastNameValue);
+        Assert.assertEquals(valueFields.get(0).getText(), practiceFormObject.getFirstNameValue() + " " + practiceFormObject.getLastNameValue());
 
         Assert.assertEquals(labelFields.get(1).getText(), "Student Email");
-        Assert.assertEquals(valueFields.get(1).getText(), emailUserlValue);
+        Assert.assertEquals(valueFields.get(1).getText(), practiceFormObject.getEmailUserlValue());
 
         Assert.assertEquals(labelFields.get(2).getText(), "Gender");
-        Assert.assertEquals(valueFields.get(2).getText(), genderValue);
+        Assert.assertEquals(valueFields.get(2).getText(), practiceFormObject.getGenderValue());
 
         Assert.assertEquals(labelFields.get(3).getText(), "Mobile");
-        Assert.assertEquals(valueFields.get(3).getText(), telUserlValue);
+        Assert.assertEquals(valueFields.get(3).getText(), practiceFormObject.getTelUserlValue());
 
         Assert.assertEquals(labelFields.get(4).getText(), "Date of Birth");
-        Assert.assertEquals(valueFields.get(4).getText(), dayValue + " " + monthValue + "," + yearValue);
+        Assert.assertEquals(valueFields.get(4).getText(), practiceFormObject.getDayValue() + " " + practiceFormObject.getMonthValue() + "," + practiceFormObject.getYearValue());
 
 
         Assert.assertEquals(labelFields.get(5).getText(), "Subjects");
-        Assert.assertEquals(valueFields.get(5).getText(), subjectValue);
+        Assert.assertEquals(valueFields.get(5).getText(), practiceFormObject.getSubjectValue());
 
         Assert.assertEquals(labelFields.get(6).getText(), "Hobbies");
-        for(Integer index = 0; index < hobbies.size(); index ++){
-            Assert.assertTrue(valueFields.get(6).getText().contains(hobbies.get(index)));
+        for(Integer index = 0; index < practiceFormObject.getHobbies().size(); index ++){
+            Assert.assertTrue(valueFields.get(6).getText().contains(practiceFormObject.getHobbies().get(index)));
         }
 
         Assert.assertEquals(labelFields.get(7).getText(), "Picture");
-        String[] arrayFile = filePath.split("/");
+        String[] arrayFile = practiceFormObject.getFilePath().split("/");
         Integer desiredIndex = arrayFile.length -1;
         Assert.assertEquals(valueFields.get(7).getText(), arrayFile[desiredIndex]);
 
         //tema restul
 
         Assert.assertEquals(labelFields.get(8).getText(), "Address");
-        Assert.assertEquals(valueFields.get(8).getText(), adresValue);
+        Assert.assertEquals(valueFields.get(8).getText(), practiceFormObject.getAdresValue());
 
         Assert.assertEquals(labelFields.get(9).getText(), "State and City");
-        Assert.assertEquals(valueFields.get(9).getText(), stateName + " " + cityName);
+        Assert.assertEquals(valueFields.get(9).getText(), practiceFormObject.getStateName() + " " + practiceFormObject.getCityName());
 
     }
 
-    public void fillEntireForm (String firstNameValue, String lastNameValue, String emailUserlValue, String genderValue, String telUserlValue, String monthValue, String yearValue,
-                                String dayValue, String subjectValue, List <String> hobbies, String filePath, String adresValue, String stateName, String cityName) {
+    public void fillEntireForm (PracticeFormObject practiceFormObject) {
 
-        fillFirstName(firstNameValue);
-        fillLirstName(lastNameValue);
-        fillEmail(emailUserlValue);
-        fillgender(genderValue);
-        fillNumber(telUserlValue);
-        fillBirthDate(monthValue, yearValue, dayValue);
-        fillSubject(subjectValue);
-        fillHobbies(hobbies);
-        fillPicture(filePath);
-        fillAdress(adresValue);
-        fillState(stateName);
-        fillCity(cityName);
+        fillFirstName(practiceFormObject.getFirstNameValue());
+        fillLirstName(practiceFormObject.getLastNameValue());
+        fillEmail(practiceFormObject.getEmailUserlValue());
+        fillgender(practiceFormObject.getGenderValue());
+        fillNumber(practiceFormObject.getTelUserlValue());
+        fillBirthDate(practiceFormObject.getMonthValue(), practiceFormObject.getYearValue(), practiceFormObject.getDayValue());
+        fillSubject(practiceFormObject.getSubjectValue());
+        fillHobbies(practiceFormObject.getHobbies());
+        fillPicture(practiceFormObject.getFilePath());
+        fillAdress(practiceFormObject.getAdresValue());
+        fillState(practiceFormObject.getStateName());
+        fillCity(practiceFormObject.getCityName());
         submit();
 
     }
