@@ -28,7 +28,7 @@ public class PracticeFormTest extends SharedData{
         PracticeFormObject practiceFormObject = new PracticeFormObject(propertyUtility.getAllData());
         HomePage homePage = new HomePage(getWebDriver());
         homePage.navigateFormsPage();
-
+//d
         FormsPage formsPage = new FormsPage(getWebDriver());
         formsPage.navigateToPracticeForm();
         PracticeFormPage practiceFormPage = new PracticeFormPage(getWebDriver());
