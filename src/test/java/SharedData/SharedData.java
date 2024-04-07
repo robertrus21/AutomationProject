@@ -1,5 +1,6 @@
 package SharedData;
 
+import SharedData.browser.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -14,10 +15,7 @@ public class SharedData {
 
     @BeforeMethod
     public void prepDriver() {
-        webDriver = new ChromeDriver();
-        webDriver.get("https://demoqa.com/");
-        webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        webDriver = new BrowserFactory().getBrowserInstance();
     }
 
     @AfterMethod
