@@ -20,7 +20,7 @@ public class BrowserFactory {
             browser = browserData.get("browser");
         }
 
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         System.out.println(browser);
 
         switch (browser){
