@@ -26,3 +26,12 @@ jobs:
 
     - name: Run Automation Tests
       run: mvn clean install
+
+    - name: Publish suite results
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: SuiteResults
+        path: |
+          target/logs/suite.log
+          target/extentReports
