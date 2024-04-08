@@ -5,11 +5,11 @@ import HelperMethods.ElementMethods;
 import Pages.AlertPage;
 import Pages.AlertsWindowFramePage;
 import Pages.HomePage;
-import SharedData.SharedData;
+import SharedData.Hooks;
 import org.openqa.selenium.*;
 import org.testng.annotations.Test;
 
-public class AlertTest extends SharedData {
+public class AlertTest extends Hooks {
 
     @Test
     public void alertMethod(){
