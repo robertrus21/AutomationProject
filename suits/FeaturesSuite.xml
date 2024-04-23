@@ -2,6 +2,7 @@
 <suite name="Regression suite" >
     <test name="Regression suite" >
         <classes>
+            <class name="Tests.AlertTest"/>
             <class name="Tests.FrameTest"/>
             <class name="Tests.WindowTest"/>
         </classes>
