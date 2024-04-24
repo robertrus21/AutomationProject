@@ -28,7 +28,7 @@ public class HomePage extends BasePage {
 
 
     public void navigateAlertFrameWindowPage(){
-        elementMethods.scrollElementByPyxel(0,350);
+     //   elementMethods.scrollElementByPyxel(0,350);
     //    WebElement consentField = getWebDriver().findElement(By.className("fc-button-label"));
     //    elementMethods.clickElement(consentField);
     //    WebElement elementsField = getWebDriver().findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
