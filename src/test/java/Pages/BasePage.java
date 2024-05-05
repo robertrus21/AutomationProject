@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 public class BasePage {
 
     protected ElementMethods elementMethods;
+
     protected WebDriver webDriver;
     protected AlertMethods alertMethods;
     protected FrameMethods frameMethods;

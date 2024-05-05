@@ -1,16 +1,13 @@
 package Tests;
 
-import HelperMethods.ElementMethods;
 import HelperMethods.WindowMethods;
 import Pages.AlertsWindowFramePage;
 import Pages.HomePage;
 import Pages.WindowPage;
-import SharedData.SharedData;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import SharedData.Hooks;
 import org.testng.annotations.Test;
 
-public class WindowTest extends SharedData {
+public class WindowTest extends Hooks {
 
    // public WebDriver webDriver;
 

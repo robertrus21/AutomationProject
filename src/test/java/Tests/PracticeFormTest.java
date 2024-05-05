@@ -1,29 +1,19 @@
 package Tests;
 
-import HelperMethods.ElementMethods;
 import ObjectData.PracticeFormObject;
 import Pages.FormsPage;
 import Pages.HomePage;
 import Pages.PracticeFormPage;
 import PropertyUtility.PropertyUtility;
-import SharedData.SharedData;
-import net.bytebuddy.asm.Advice;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
+import SharedData.Hooks;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-import java.io.File;
-import java.util.Arrays;
-import java.util.List;
-
-public class PracticeFormTest extends SharedData{
-//    public WebDriver webDriver;
+public class PracticeFormTest extends Hooks {
+    //public WebDriver webDriver;
 
     @Test
-    public void metodaFormTest(){
+    public void metodaFormTest() {
         PropertyUtility propertyUtility = new PropertyUtility("PracticeFormData");
         PracticeFormObject practiceFormObject = new PracticeFormObject(propertyUtility.getAllData());
         HomePage homePage = new HomePage(getWebDriver());
